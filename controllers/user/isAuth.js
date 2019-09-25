@@ -1,6 +1,5 @@
 exports.isAuth = (req, res, next) => {
-    const isAuth = req.profile && req.auth && req.profile._id == req.auth._id;
-
+    const isAuth = req.profile && req.auth;
     if (!isAuth) {
         return res.status(403).json({
             error: {

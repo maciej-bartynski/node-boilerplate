@@ -26,6 +26,7 @@ exports.userById = (req, res, next, id) => {
         user.hashed_password = undefined;
 
         req.profile = user;
+        console.log(user)
         next();
     });
 }
