@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const expressValidator = require('express-validator');
+const cors = require('cors');
 
 // import routes
 const authRouter = require('./routes/auth');
@@ -22,6 +23,9 @@ mongoose.connect(process.env.DATABASE, {
 }).then(() => {
     console.log('Db connected')
 });
+
+//CORS
+app.use(cors());
 
 // middlewares
 app.use(morgan('dev'));
